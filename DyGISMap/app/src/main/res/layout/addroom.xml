@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/eT_floor_start"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:ems="10"
+            android:hint="起始楼层"
+            android:inputType="number"/>
+        <EditText
+            android:id="@+id/eT_floor_end"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:ems="10"
+            android:hint="结束楼层"
+            android:inputType="number"/>
+
+        <EditText
+            android:id="@+id/eT_floor_rooms"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:ems="10"
+            android:hint="每层房间数"
+            android:inputType="number"
+            />
+    </LinearLayout>
+</LinearLayout>

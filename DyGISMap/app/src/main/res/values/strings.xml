@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">DyGISMap</string>
+    <string name="read_permission_denied">read_deny!!!</string>
+    <string name="location_permission_denied">location_permission_denied</string>
+    <string name="right_drawer_title">采集数据填写</string>
+
+
+    <!--字段名-->
+    <string name="key_pointType">PointType</string>
+    <string name="key_jingwushi">Jingwushi</string>
+    <string name="key_cunjuwei">CunJuwei</string>
+    <string name="key_jieluxiang">Jieluxiang</string>
+    <string name="key_menpaihao">Menpaihao</string>
+    <string name="key_jianzhuwumingchen">Jianzhuwumingchen</string>
+    <string name="key_loucengshu">Loucengshu</string>
+    <string name="key_plateType">PlateType</string>
+    <string name="key_comments">Comments</string>
+    <string name="key_time">Time</string>
+    <string name="key_picName">PicName</string>
+    <string name="key_xiaoqumingzi">xiaoqumingzi</string>
+    <string name="key_gongcangmingzi">gongcangmingzi</string>
+    <string name="key_xuexiaomingzi">xuexiaomingzi</string>
+    <string name="key_yiyuanmingzi">yiyuanmingzi</string>
+    <string name="key_xiaoqudanyuan">xiaoqudanyuan</string>
+    <string name="key_fangjian">fangjian</string>
+
+
+    <!--表单数据-->
+    <!--点类型-->
+    <string-array name="pointType">
+        <item>小区</item>
+        <item>工厂</item>
+        <item>学校</item>
+        <item>医院</item>
+        <item>办公楼</item>
+        <item>出租屋</item>
+        <item>公寓酒店</item>
+        <item>商铺</item>
+        <item>民宅</item>
+        <item>平房</item>
+        <item>楼房</item>
+        <item>地下室</item>
+        <item>人防公事</item>
+        <item>违章建筑</item>
+        <item>高层</item>
+        <item>新式里弄</item>
+        <item>旧式里弄</item>
+        <item>简易房</item>
+        <item>多层楼房</item>
+        <item>别墅</item>
+    </string-array>
+    <!--门牌类型-->
+    <string-array name="plateType">
+        <item>蓝牌</item>
+        <item>无门牌</item>
+        <item>自编</item>
+        <item>其他</item>
+    </string-array>
+</resources>

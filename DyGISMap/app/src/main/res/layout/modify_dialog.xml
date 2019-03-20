@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/layout_formList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="点类型"/>
+            <Spinner
+                android:id="@+id/spinner_pointType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/pointType"/>
+            <com.rey.material.widget.EditText
+                android:id="@+id/eT_jingwushi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                app:et_labelTextSize="18dp"
+                android:textSize="24dp"
+                app:et_labelEnable="true"
+                android:hint="所属警务室" />
+            <com.rey.material.widget.EditText
+                android:id="@+id/eT_cunjuwei"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                app:et_labelTextSize="18dp"
+                android:textSize="24dp"
+                app:et_labelEnable="true"
+                android:hint="村居委" />
+            <com.rey.material.widget.EditText
+                android:id="@+id/eT_jieluxiang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                app:et_labelTextSize="18dp"
+                android:textSize="24dp"
+                app:et_labelEnable="true"
+                android:hint="街路巷" />
+            <com.rey.material.widget.EditText
+                android:id="@+id/eT_menpaihao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                app:et_labelTextSize="18dp"
+                android:textSize="24dp"
+                app:et_labelEnable="true"
+                android:hint="门牌号" />
+            <com.rey.material.widget.EditText
+                android:id="@+id/eT_jianzuwu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                app:et_labelTextSize="18dp"
+                android:textSize="24dp"
+                app:et_labelEnable="true"
+                android:hint="建筑物名称" />
+            <com.rey.material.widget.EditText
+                android:id="@+id/eT_loupaihao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                app:et_labelTextSize="18dp"
+                android:textSize="24dp"
+                app:et_labelEnable="true"
+                android:hint="楼牌号" />
+            <com.rey.material.widget.EditText
+                android:id="@+id/eT_danweiming"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                app:et_labelTextSize="18dp"
+                android:textSize="24dp"
+                app:et_labelEnable="true"
+                android:hint="单位名" />
+            <com.rey.material.widget.EditText
+                android:id="@+id/eT_floors"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                app:et_labelTextSize="18dp"
+                android:textSize="24dp"
+                app:et_labelEnable="true"
+                android:hint="楼层数" />
+            <com.rey.material.widget.EditText
+                android:id="@+id/eT_rooms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                app:et_labelTextSize="18dp"
+                android:textSize="24dp"
+                app:et_labelEnable="true"
+                android:hint="房间名: xxx-xxx" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="门牌类型"/>
+            <Spinner
+                android:id="@+id/spinner_plateType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/plateType"/>
+            <com.rey.material.widget.EditText
+                android:id="@+id/eT_comments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                app:et_labelTextSize="18dp"
+                android:textSize="24dp"
+                app:et_labelEnable="true"
+                android:hint="备注" />
+            <!--特殊字段-->
+            <com.rey.material.widget.EditText
+                android:id="@+id/eT_xxmingzi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                app:et_labelTextSize="18dp"
+                android:textSize="24dp"
+                app:et_labelEnable="true"
+                android:hint="小区/工厂/医院/学校/商铺 名字"/>
+            <com.rey.material.widget.EditText
+                android:id="@+id/eT_xiaoqudanyuan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                app:et_labelTextSize="18dp"
+                android:textSize="24dp"
+                app:et_labelEnable="true"
+                android:hint="小区单元"/>
+        </LinearLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>
