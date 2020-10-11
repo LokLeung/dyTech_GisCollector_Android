@@ -15,15 +15,9 @@ import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
+import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.content.FileProvider;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.text.method.ScrollingMovementMethod;
@@ -43,6 +37,13 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.core.content.FileProvider;
+import androidx.drawerlayout.widget.DrawerLayout;
+
 import com.esri.arcgisruntime.concurrent.ListenableFuture;
 import com.esri.arcgisruntime.data.Feature;
 import com.esri.arcgisruntime.data.FeatureQueryResult;
@@ -61,7 +62,7 @@ import com.esri.arcgisruntime.mapping.view.GraphicsOverlay;
 import com.esri.arcgisruntime.mapping.view.LocationDisplay;
 import com.esri.arcgisruntime.mapping.view.MapView;
 import com.esri.arcgisruntime.symbology.SimpleMarkerSymbol;
-import com.gc.materialdesign.views.ButtonRectangle;
+//import com.gc.materialdesign.views.ButtonRectangle;
 import com.gis.dy.dygismap.model.ExcelUtils;
 import com.gis.dy.dygismap.model.FileUtils;
 import com.gis.dy.dygismap.model.MyGISPoint;
@@ -76,6 +77,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
@@ -85,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
     private String workPath = Environment.getExternalStorageDirectory().toString() + "/shps/work";
 
     //控件
-    private ButtonRectangle btn_GPS;
+    private Button btn_GPS;
     private MapView mMapView;
     private Spinner spn_pointType;
     private Spinner spn_plateType;
@@ -143,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
         Date date = new Date(System.currentTimeMillis());
         String time = myDateFormat.format(date);
         int int_time = Integer.parseInt(time);
-        if(int_time > 20190430){
+        if(int_time > 20210430){
             int count = mydb.cacheDao().getCount();
             try{
                 if(count == 1){
@@ -811,7 +813,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //test btn
-        ButtonRectangle btn_test = findViewById(R.id.btn_Testdb);
+        Button btn_test = findViewById(R.id.btn_Testdb);
         btn_test.setOnClickListener(view -> {
             try{
                 ExifInterface exifInterface = new ExifInterface(mCurrentPhotoPath);
@@ -843,7 +845,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        ButtonRectangle btn_func = findViewById(R.id.btn_funcs);
+        Button btn_func = findViewById(R.id.btn_funcs);
         btn_func.setOnClickListener(view -> {
             drawerLayout.openDrawer(main_left_drawer_layout);
         });
@@ -855,7 +857,7 @@ public class MainActivity extends AppCompatActivity {
             if(exitflag){
                 ActivityManager.getInstance().exit();
             }
-
+            System.out.println("打开底图！");
             // define permission to request
             String[] reqPermission = new String[]{Manifest.permission.READ_EXTERNAL_STORAGE};
             int requestCode = 2;
@@ -865,9 +867,9 @@ public class MainActivity extends AppCompatActivity {
                 Log.v("readFIle", "permission");
                 //get files
                 File map_detry = new File(copyPath);
-                Log.v("Files", map_detry.exists() + "");
-                Log.v("Files", map_detry.isDirectory() + "");
-                Log.v("Files", map_detry.listFiles() + "");
+                Log.v("Files", map_detry.exists() + "exitsts");
+                Log.v("Files", map_detry.isDirectory() + "isDirectory");
+                Log.v("Files", Arrays.toString(map_detry.listFiles()) + "");
                 File[] map_files = map_detry.listFiles(path -> {
                     if (path.exists()) {
                         if (path.isDirectory() && path.canRead() && path.canWrite()) {
@@ -1461,27 +1463,27 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int  requestId, int resultCode, Intent data) {
         if (requestId == REQUEST_TAKE_PHOTO) {
             if (resultCode == RESULT_CANCELED) {
-                Log.e("Camera","Cancle");
+                Log.e("Camera", "Cancle");
                 //delete temp file
-                try{
+                try {
                     File photo = new File(mCurrentPhotoPath);
-                    if(photo.exists()){
-                        Log.e("Camera","delete!");
-                        if(photo.delete())
-                            Log.e("Camera","deleted sucess!");
+                    if (photo.exists()) {
+                        Log.e("Camera", "delete!");
+                        if (photo.delete())
+                            Log.e("Camera", "deleted sucess!");
                     }
-                }catch (Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             } else if (resultCode == RESULT_OK) {
-                Log.e("Camera","OK");
+                Log.e("Camera", "OK");
                 picCount++;
                 mapViewModel.getpicCount().setValue(picCount);
                 //makeEXIF(mCurrentPhotoPath);
-                if(tempGPoint.picName == "")
-                    tempGPoint.picName+=mCurrentPhotoName;
+                if (tempGPoint.picName == "")
+                    tempGPoint.picName += mCurrentPhotoName;
                 else
-                    tempGPoint.picName+=";"+mCurrentPhotoName;
+                    tempGPoint.picName += ";" + mCurrentPhotoName;
 
                 //only a point~ anyway
                 AsyncTask.execute(() -> {
@@ -1489,6 +1491,7 @@ public class MainActivity extends AppCompatActivity {
                 });
             }
         }
+        super.onActivityResult(requestId, resultCode, data);
     }
 
     public class TestArrayAdapter extends ArrayAdapter<String> {

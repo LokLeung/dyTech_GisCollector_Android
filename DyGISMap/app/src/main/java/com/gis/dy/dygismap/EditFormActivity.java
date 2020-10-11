@@ -1,15 +1,10 @@
 package com.gis.dy.dygismap;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
-import com.gis.dy.dygismap.model.MyGISPoint;
 import com.gis.dy.dygismap.repository.MyDataBase;
-import com.gis.dy.dygismap.repository.room.MyRoomDataBase;
-
-import java.util.List;
 
 public class EditFormActivity extends AppCompatActivity {
 

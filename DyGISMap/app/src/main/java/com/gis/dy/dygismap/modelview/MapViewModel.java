@@ -2,14 +2,13 @@ package com.gis.dy.dygismap.modelview;
 
 import android.Manifest;
 import android.app.Activity;
-import android.arch.lifecycle.MutableLiveData;
-import android.arch.lifecycle.ViewModel;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModel;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.AsyncTask;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -26,12 +25,10 @@ import com.esri.arcgisruntime.layers.FeatureLayer;
 import com.esri.arcgisruntime.loadable.LoadStatus;
 import com.esri.arcgisruntime.mapping.ArcGISMap;
 import com.esri.arcgisruntime.mapping.Basemap;
-import com.esri.arcgisruntime.symbology.PictureMarkerSymbol;
 import com.esri.arcgisruntime.symbology.SimpleMarkerSymbol;
 import com.esri.arcgisruntime.symbology.SimpleRenderer;
 import com.esri.arcgisruntime.symbology.TextSymbol;
 import com.gis.dy.dygismap.MainActivity;
-import com.gis.dy.dygismap.R;
 import com.gis.dy.dygismap.model.MyGISPoint;
 import com.gis.dy.dygismap.model.mapmodel.MyMapModel;
 import com.gis.dy.dygismap.repository.room.MyRoomDataBase;
@@ -42,7 +39,6 @@ import com.google.gson.JsonPrimitive;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ExecutionException;
 
 public class MapViewModel extends ViewModel {
     //Model
